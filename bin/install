@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-kustomize build argo-cd | kubectl apply -n argocd -f -
-kustomize build argo-cd-projects | kubectl apply -n argocd -f -
+kustomize build argocd | kubectl apply -n argocd -f -
+kubectl apply -n argocd -f argocd-meta
+kubectl apply -n argocd -f argocd-meta/argocd
